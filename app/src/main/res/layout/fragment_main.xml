@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.MainFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        app:layout_constraintBottom_toTopOf="@id/view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/youtube"
+            android:clickable="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="15dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/ic_youtube"
+            android:scaleType="centerInside"
+            android:layout_width="38dp"
+            android:layout_height="28dp"/>
+
+        <TextView
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:text="YouTube"
+            android:layout_marginStart="5dp"
+            app:layout_constraintTop_toTopOf="@id/youtube"
+            app:layout_constraintBottom_toBottomOf="@id/youtube"
+            app:layout_constraintStart_toEndOf="@id/youtube"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/user"
+            android:src="@drawable/profile"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="0.01dp"
+            app:civ_shadow="true"
+            android:scaleType="centerCrop"
+            app:civ_shadow_color="#BAB8B8"
+            app:civ_shadow_radius="5"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintTop_toTopOf="@id/youtube"
+            app:layout_constraintBottom_toBottomOf="@id/youtube"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageView
+            android:id="@+id/three"
+            android:clickable="true"
+            android:layout_marginEnd="12dp"
+            app:layout_constraintTop_toTopOf="@id/user"
+            app:layout_constraintBottom_toBottomOf="@id/user"
+            app:layout_constraintEnd_toStartOf="@id/user"
+            android:src="@drawable/ic_lupa"
+            android:scaleType="centerCrop"
+            android:layout_width="28dp"
+            android:layout_height="28dp"/>
+
+        <ImageView
+            android:id="@+id/two"
+            android:clickable="true"
+            android:layout_marginEnd="12dp"
+            app:layout_constraintTop_toTopOf="@id/user"
+            app:layout_constraintBottom_toBottomOf="@id/user"
+            app:layout_constraintEnd_toStartOf="@id/three"
+            android:src="@drawable/ic_ring"
+            android:scaleType="centerCrop"
+            android:layout_width="28dp"
+            android:layout_height="28dp"/>
+
+        <ImageView
+            android:id="@+id/one"
+            android:clickable="true"
+            android:padding="2dp"
+            android:layout_marginEnd="12dp"
+            app:layout_constraintTop_toTopOf="@id/user"
+            app:layout_constraintBottom_toBottomOf="@id/user"
+            app:layout_constraintEnd_toStartOf="@id/two"
+            android:src="@drawable/ic_un"
+            android:scaleType="centerCrop"
+            android:layout_width="28dp"
+            android:layout_height="28dp"/>
+
+        <View
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="#DAD9D9"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/view"
+        android:background="@color/purple_100"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/nav_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/constraint" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view">
+
+        <Button
+            android:id="@+id/home"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/ic_home_black"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            app:layout_constraintEnd_toStartOf="@id/shorts"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_marginTop="2dp"
+            android:gravity="center"
+            android:text="Home"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintTop_toBottomOf="@id/home"
+            app:layout_constraintStart_toStartOf="@id/home"
+            app:layout_constraintEnd_toEndOf="@id/home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/shorts"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/ic_shorts_white"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            app:layout_constraintEnd_toStartOf="@id/add"
+            app:layout_constraintStart_toEndOf="@id/home"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_marginTop="2dp"
+            android:gravity="center"
+            android:text="Shorts"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintTop_toBottomOf="@id/shorts"
+            app:layout_constraintStart_toStartOf="@id/shorts"
+            app:layout_constraintEnd_toEndOf="@id/shorts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/add"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/ic_add_white"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            app:layout_constraintEnd_toStartOf="@id/subscription"
+            app:layout_constraintStart_toEndOf="@id/shorts"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/subscription"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/ic_sub_white"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            app:layout_constraintEnd_toStartOf="@id/library"
+            app:layout_constraintStart_toEndOf="@id/add"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_marginTop="2dp"
+            android:gravity="center"
+            android:text="Subscription"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintTop_toBottomOf="@id/subscription"
+            app:layout_constraintStart_toStartOf="@id/subscription"
+            app:layout_constraintEnd_toEndOf="@id/subscription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/library"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/ic_lib_white"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/subscription"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_marginTop="2dp"
+            android:gravity="center"
+            android:text="Library"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintTop_toBottomOf="@id/library"
+            app:layout_constraintStart_toStartOf="@id/library"
+            app:layout_constraintEnd_toEndOf="@id/library"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/border"
+    android:layout_width="match_parent"
+    android:layout_height="350dp">
+
+    <TextView
+        android:id="@+id/create"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="25dp"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:text="Create"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/clear"
+        android:background="@drawable/ic_add"
+        android:rotation="45"
+        android:layout_marginRight="25dp"
+        app:layout_constraintTop_toTopOf="@id/create"
+        app:layout_constraintBottom_toBottomOf="@id/create"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="50dp"
+        android:layout_height="50dp"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/upload_video"
+        android:src="@drawable/upload"
+        app:fabCustomSize="55dp"
+        app:maxImageSize="20dp"
+        app:layout_constraintTop_toBottomOf="@id/create"
+        app:layout_constraintLeft_toLeftOf="@id/create"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#F8F7F7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:text="Upload a video"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintTop_toTopOf="@id/upload_video"
+        app:layout_constraintBottom_toBottomOf="@id/upload_video"
+        app:layout_constraintLeft_toRightOf="@id/upload_video"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/create_short"
+        android:src="@drawable/ic_shorts_white"
+        app:fabCustomSize="55dp"
+        app:maxImageSize="20dp"
+        app:layout_constraintTop_toBottomOf="@id/upload_video"
+        app:layout_constraintLeft_toLeftOf="@id/create"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#F8F7F7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:text="Create a short"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintTop_toTopOf="@id/create_short"
+        app:layout_constraintBottom_toBottomOf="@id/create_short"
+        app:layout_constraintLeft_toRightOf="@id/create_short"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:text="Beta"
+        android:gravity="center"
+        android:background="@color/purple_500"
+        app:layout_constraintTop_toTopOf="@id/create_short"
+        app:layout_constraintBottom_toBottomOf="@id/create_short"
+        app:layout_constraintRight_toRightOf="@id/clear"
+        android:layout_width="50dp"
+        android:layout_height="25dp"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/go_live"
+        android:src="@drawable/hotspot"
+        app:fabCustomSize="55dp"
+        app:maxImageSize="20dp"
+        app:layout_constraintTop_toBottomOf="@id/create_short"
+        app:layout_constraintLeft_toLeftOf="@id/create"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#F8F7F7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:text="Go live"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintTop_toTopOf="@id/go_live"
+        app:layout_constraintBottom_toBottomOf="@id/go_live"
+        app:layout_constraintLeft_toRightOf="@id/go_live"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <View
+        android:layout_marginTop="25dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintTop_toBottomOf="@id/go_live"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,83 @@
+package dev.bahodir.youtubeapiapp.fragment
+
+import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
+import dev.bahodir.youtubeapiapp.R
+import dev.bahodir.youtubeapiapp.databinding.FragmentVideoBinding
+
+// TODO: Rename parameter arguments, choose names that match
+// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+private const val ARG_PARAM1 = "videoId"
+//private const val ARG_PARAM2 = "param2"
+
+/**
+ * A simple [Fragment] subclass.
+ * Use the [VideoFragment.newInstance] factory method to
+ * create an instance of this fragment.
+ */
+class VideoFragment : Fragment() {
+    // TODO: Rename and change types of parameters
+    private var videoId: String? = null
+    //private var param2: String? = null
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        arguments?.let {
+            videoId = it.getString(ARG_PARAM1)
+            //param2 = it.getString(ARG_PARAM2)
+        }
+    }
+
+    private var _binding: FragmentVideoBinding? = null
+    private val binding get() = _binding!!
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        _binding = FragmentVideoBinding.inflate(inflater, container, false)
+
+        lifecycle.addObserver(binding.youtubePlayerView)
+
+        binding.youtubePlayerView.addYouTubePlayerListener(object :
+            AbstractYouTubePlayerListener() {
+            override fun onReady(youTubePlayer: YouTubePlayer) {
+                super.onReady(youTubePlayer)
+                youTubePlayer.loadVideo(videoId ?: "", 0f)
+            }
+        })
+
+        return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
+    companion object {
+        /**
+         * Use this factory method to create a new instance of
+         * this fragment using the provided parameters.
+         *
+         * @param videoId Parameter 1.
+         * @param param2 Parameter 2.
+         * @return A new instance of fragment VideoFragment.
+         */
+        // TODO: Rename and change types and number of parameters
+        @JvmStatic
+        fun newInstance(videoId: String) =
+            VideoFragment().apply {
+                arguments = Bundle().apply {
+                    putString(ARG_PARAM1, videoId)
+                    //putString(ARG_PARAM2, param2)
+                }
+            }
+    }
+}
